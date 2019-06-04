@@ -68,4 +68,112 @@ rata_rata_untung <- mean(A_vector)
 #Pada hari apa sajakah keuntungan toko A di atas rata2?
 A_vector > rata_rata_untung
 
+#Cara membuat matrix
+my.matrix <- matrix(c(1:12), byrow=T, nrow = 3)
+my.matrix
+
+#Elemen pertama : jumlah subscriber, elemen kedua total views
+ricis_official <- c(4365, 565183)
+raditya_dika <- c(4280, 541246)
+calon_sarjana <- c(4191, 842819)
+#Membuat matrix
+matrix_youtuber_id <- matrix(c(ricis_official, raditya_dika, calon_sarjana), byrow=T, nrow=3)
+matrix_youtuber_id
+#menamai matrix
+parameter <- c("Jumlah Subscriber", "Total views")
+youtuber <- c("Ricis Official","Raditya Dika","Calon Sarjana")
+colnames(matrix_youtuber_id) <- parameter
+rownames(matrix_youtuber_id) <- youtuber
+matrix_youtuber_id
+
+#Menghitung jumlah tiap kolom
+colSums(matrix_youtuber_id)
+rowSums(matrix_youtuber_id)
+
+#Menambah kolom pada matrix
+jumlah_video <- c(290, 724, 552)
+cbind(matrix_youtuber_id, jumlah_video)
+
+#Menambah baris pada matrix
+Atta_Halilintar <- c(3879, 267432)
+rbind(matrix_youtuber_id, Atta_Halilintar)
+
+#Menyeleksi elemen matrix
+#Menyeleksi baris ke-1 kolom ke-2 dari matrix_youtuber_id
+matrix_youtuber_id[1,2]
+#Menyeleksi baris ke-3
+matrix_youtuber_id[3,]
+#Menyeleksi kolom ke-2
+matrix_youtuber_id[,2]
+#Menyeleksi baris ke-1 sd baris ke-3 dan kolom ke-1
+matrix_youtuber_id[1:3,1]
+
+#Aritmetika dalam matrix
+matrix_youtuber_2 <- cbind(matrix_youtuber_id, jumlah_video)
+matrix_youtuber_2
+matrix_youtuber_2[,2]/matrix_youtuber_2[,3]
+
+#Array
+my.array <- array(c(1:24), dim = c(4,3,2))
+my.array
+my.array[2,,]
+my.array[2,3,]
+my.array[1:10]
+
+#Data Frame
+bmi <- data.frame(
+  gender = c("Female", "Male", "Female"),
+  single = c(F, F, T),
+  height = c(155, 170, 165.5),
+  wight = c(64, 65, 48.5),
+  age = c(42,38,26)
+)
+#Melihat dan menyeleksi data frame
+bmi
+head(bmi)
+bmi$age
+bmi[1]
+#Menginvestigasi struktur data frame
+str(bmi)
+#Mengurutkan data frame berdasarkan umur
+bmi[order(bmi$age),]
+bmi[order(bmi$age, decreasing = T),]
+
+#Factor
+edu <- rep(c("SD","SMP","SMA"),3)
+factor_edu <- factor(edu)
+factor_edu
+
+gender_vector <- c("Male", "Female", "Female","Male","Male")
+factor_gender_vector <- factor(gender_vector)
+factor_gender_vector
+
+#Level Factor
+levels(factor_edu)
+levels(factor_gender_vector)
+#Summary factor
+summary(factor_edu)
+summary(factor_gender_vector)
+#Mengurutkan Factor
+factor_edu <- factor(edu, ordered = T, levels = c("SD","SMP","SMA"))
+levels(factor_edu)
+
+#List
+my_vector <- 1:20
+my.matrix <- matrix(1:12, ncol = 4)
+my_df <- mtcars[1:10,]
+my_list <- list(my_vector, my.matrix, my_df)
+my_list
+#Menamai elemen list
+my_list <- list(vektor = my_vector, matriks = my.matrix,
+                dataframe = my_df)
+my_list
+#Menyeleksi elemen dalam list
+my_list[[2]][10]
+my_list[[2]]
+my_list[[2]][1]
+my_list[[2]][1,]
+
+
+#If Statement
 
