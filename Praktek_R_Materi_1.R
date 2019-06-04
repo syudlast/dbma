@@ -176,4 +176,44 @@ my_list[[2]][1,]
 
 
 #If Statement
+socialmedia <- "Facebook"
+jumlah_view <- 15
 
+#Menyusun if statement untuk socialmedia
+if(socialmedia == "Youtube"){
+  print("Aku ingin menjadi Youtuber")
+}else if(socialmedia == "Facebook"){
+  print("Aku suka mengakses Facebook")
+} else{
+  print("Aku tidak ingin menjadi Youtuber")
+}
+
+if(jumlah_view > 17){
+  print("You're popular!")
+}else{
+  print("Try harder")
+}
+
+#While loop
+kecepatan <- 64
+while (kecepatan > 30){
+  print("turunkan kecepatan!")
+  kecepatan <- kecepatan - 7
+  print(kecepatan)
+}
+
+#for loop
+prima <- c(2, 3, 5, 7, 11, 13)
+for(p in prima){
+  print(p)
+}
+
+for(i in 1:length(prima)){
+  print(prima[i])
+}
+
+#Function
+ratio <- function(x,y){
+  x/y
+}
+ratio(3,4)
